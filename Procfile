@@ -1,1 +1,1 @@
-web: gunicorn microphone.wsgi --log-file -
+web: gunicorn microphone.wsgipip install gunicorn
