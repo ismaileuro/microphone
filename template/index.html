@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microphone Champion</title>
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header>
+      <div class="logo">
+        <img src="./static/img/rounded-headphones.svg" alt="" />
+      </div>
+      <nav>
+        <ul>
+          <a class="active" href="/"><li>Home</li></a>
+          <a href="/services"><li>Services</li></a>
+          <a href="/promotion"><li>Promotion</li></a>
+          <a href="/torronut"><li>Torronut</li></a>
+          {% if user.is_authenticated %}
+          <a href="/dashboard"><li>Dashbaord</li></a>
+          <a href="/logout"><li>Logout</li></a>
+          {% else %}
+          <a href="/login"><li>Login</li></a>
+          <a href="/signup"><li>Signup</li></a>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Start -->
+    <div class="hero">
+      <div data-aos-duration="1000" data-aos="fade-down" class="hero_text" style="align-items: unset; justify-content: unset">
+        <h1>MUSIC</h1>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </p>
+        <button style="width: 23rem">Listen</button>
+      </div>
+      <div class="social" data-aos-duration="1000" data-aos="fade-up">
+        <img src="/static/img/023-facebook.svg" alt="" />
+        <img src="/static/img/044-instagram.svg" alt="" />
+        <img src="/static/img/096-twitter.svg" alt="" />
+      </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- Rap chart and New Release Start -->
+    <div class="chart_and_release">
+      <div data-aos-duration="1000" data-aos="fade-right" class="chart">
+        <div class="circle"></div>
+        <h1>Rap Charts</h1>
+        <div class="border"></div>
+        <div class="bar_chart">
+          <div class="chart">
+            <div class="bar">
+              <div class="colorbar per100"></div>
+            </div>
+            <div class="name">Lorem Ipsum</div>
+          </div>
+          <div class="chart">
+            <div class="bar">
+              <div class="colorbar per70"></div>
+            </div>
+            <div class="name">Lorem Ipsum</div>
+          </div>
+          <div class="chart">
+            <div class="bar">
+              <div class="colorbar per90"></div>
+            </div>
+            <div class="name">Lorem Ipsum</div>
+          </div>
+          <div class="chart">
+            <div class="bar">
+              <div class="colorbar per50"></div>
+            </div>
+            <div class="name">Lorem Ipsum</div>
+          </div>
+          <div class="chart">
+            <div class="bar">
+              <div class="colorbar per30"></div>
+            </div>
+            <div class="name">Lorem Ipsum</div>
+          </div>
+          <div class="chart">
+            <div class="bar">
+              <div class="colorbar per60"></div>
+            </div>
+            <div class="name">Lorem Ipsum</div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        class="release"
+        style="display: flex; flex-direction: column; align-items: flex-end"
+      >
+        <div class="circle" style="left: unset; right: -4rem"></div>
+        <h1 style="padding-right: 5rem">New Release</h1>
+        <div class="border" style="margin-right: 5rem"></div>
+        <div class="newsong">
+          <img src="./static/img/release.png" alt="" />
+          <div class="text">
+            <h2>Lorem Ipsum</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s,
+            </p>
+            <button>Listen</button>
+          </div>
+        </div>
+        <div class="newsong">
+          <img src="./static/img/release.png" alt="" />
+          <div class="text">
+            <h2>Lorem Ipsum</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s,
+            </p>
+            <button>Listen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Rap chart and New Release End -->
+
+    <!-- Rap News Start -->
+    <div class="rap_news" data-aos="zoom-in-up" data-aos-duration="1000">
+      <div class="circle"></div>
+      <h1>Rap News</h1>
+      <div class="border"></div>
+      <div class="news_list">
+        <div class="news">
+          <img src="./static/img/news.png" alt="" />
+          <h2>Lorem Ipsum</h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s,
+          </p>
+          <button>Read More</button>
+        </div>
+        <div class="news">
+          <img src="./static/img/news.png" alt="" />
+          <h2>Lorem Ipsum</h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s,
+          </p>
+          <button>Read More</button>
+        </div>
+        <div class="news">
+          <img src="./static/img/news.png" alt="" />
+          <h2>Lorem Ipsum</h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s,
+          </p>
+          <button>Read More</button>
+        </div>
+      </div>
+    </div>
+    <!-- Rap News End -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+
+  <!-- JavaScript -->
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="./static/js/app.js"></script>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microphone Champion</title>
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      .news {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .news h2 {
+        margin-top: 1rem;
+      }
+      .news img {
+        width: 10rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header>
+      <div class="logo">
+        <img src="./static/img/rounded-headphones.svg" alt="" />
+      </div>
+      <nav>
+        <ul>
+          <a href="/"><li>Home</li></a>
+          <a href="/services"><li>Services</li></a>
+          <a class="active" href="/promotion"><li>Promotion</li></a>
+          <a href="/torronut"><li>Torronut</li></a>
+          {% if user.is_authenticated %}
+          <a href="/dashboard"><li>Dashbaord</li></a>
+          <a href="/logout"><li>Logout</li></a>
+          {% else %}
+          <a href="/login"><li>Login</li></a>
+          <a href="/signup"><li>Signup</li></a>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Start -->
+    <div
+      class="hero"
+      style="justify-content: center; align-items: center; text-align: center"
+    >
+      <div data-aos="zoom-in-down" data-aos-duration="1000" class="hero_text">
+        <h1>MUSIC<br />PROMOTION</h1>
+        <p>
+          Make your music come alive by promote your music in these cities
+        </p>
+      </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- Rap News Start -->
+    <div class="rap_news">
+      <div class="news_list">
+        <div class="news" data-aos="zoom-in-down" data-aos-duration="1000" >
+          <img src="./static/img/Group 50.png" alt="" />
+          <h2>Spain</h2>
+        </div>
+        <div class="news" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="200">
+          <img src="./static/img/Group 50.png" alt="" />
+          <h2>France</h2>
+        </div>
+        <div class="news" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="400">
+            <img src="./static/img/Group 50.png" alt="" />
+            <h2>Spain</h2>
+          </div>
+          <div class="news" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="600">
+            <img src="./static/img/Group 50.png" alt="" />
+            <h2>France</h2>
+          </div>
+      </div>
+    </div>
+    <!-- Rap News End -->
+    <!-- Rap News Start -->
+    <div class="rap_news">
+      <div class="news_list">
+        <div class="news" data-aos="zoom-in-down" data-aos-duration="1000">
+            <img src="./static/img/Group 50.png" alt="" />
+            <h2>Spain</h2>
+          </div>
+          <div class="news" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="200">
+            <img src="./static/img/Group 50.png" alt="" />
+            <h2>France</h2>
+          </div>
+          <div class="news" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="400">
+              <img src="./static/img/Group 50.png" alt="" />
+              <h2>Spain</h2>
+            </div>
+            <div class="news" data-aos="zoom-in-down" data-aos-duration="1000" data-aos-delay="600">
+              <img src="./static/img/Group 50.png" alt="" />
+              <h2>France</h2>
+            </div>
+      </div>
+    </div>
+    <!-- Rap News End -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

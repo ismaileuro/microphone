@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microphone Champion</title>
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <style>
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      main .left,
+      .right {
+        flex: 1;
+      }
+      .left {
+        background: url("./static/img/hero.jpg");
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .right h1 {
+        margin-bottom: 2rem;
+      }
+      .right form {
+        display: flex;
+        flex-direction: column;
+      }
+      .right form input,
+      .right form button {
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
+        width: 20rem;
+        border-radius: 999px;
+        margin-top: 1rem;
+      }
+      .right form button {
+        border: 2px solid #e583e2;
+        color: #e583e2;
+        background: unset;
+        font-weight: 400px;
+      }
+      .right form input:focus,
+      .right form button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header>
+      <div class="logo">
+        <img src="./static/img/rounded-headphones.svg" alt="" />
+      </div>
+      <nav>
+        <ul>
+          <a href="/"><li>Home</li></a>
+          <a href="/services"><li>Services</li></a>
+          <a href="/promotion"><li>Promotion</li></a>
+          <a href="/torronut"><li>Torronut</li></a>
+          {% if user.is_authenticated %}
+          <a href="/dashboard"><li>Dashbaord</li></a>
+          <a href="/logout"><li>Logout</li></a>
+          {% else %}
+          <a href="/login"><li>Login</li></a>
+          <a class="active" href="/signup"><li>Signup</li></a>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+    <!-- Header End -->
+    <main>
+      <div class="left"></div>
+      <div class="right">
+        <h1>SIGNUP</h1>
+        <form action="/signup" method="post">
+          {% csrf_token %}
+          <input
+            type="text"
+            name="firstname"
+            placeholder="First Name"
+            required
+          />
+          <input type="text" name="lastname" placeholder="Last Name" required />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+            required
+          />
+          <p id="exist"></p>
+          <input type="email" name="email" placeholder="Email" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <button class="signup" type="submit">Signup</button>
+          <p style="margin-top: 1rem">Already have an account 
+            <a style="text-decoration: none; color: #e583e2" href="/login"
+              >Login</a
+            >
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+      $("#username").keyup(function () {
+        var username = $(this).val();
+
+        $.ajax({
+          url: "username-check",
+          data: {
+            username: username,
+          },
+          dataType: "json",
+          success: function (data) {
+            console.log(data.flag);
+            if (data.flag == 0) {
+              $("#exist").html("This username already exist.");
+              $(".signup").prop("disabled", true);
+            } else {
+              $("#exist").html("");
+              $(".signup").prop("disabled", false);
+            }
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
