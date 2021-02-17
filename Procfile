@@ -1,1 +1,1 @@
-web: gunicorn microphone.wsgi -a
+web: gunicorn microphone.wsgi --log-file -
